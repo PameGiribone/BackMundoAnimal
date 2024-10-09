@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.backend.mundoAnimal.entity.Categoria;
 import com.backend.mundoAnimal.entity.Producto;
 import com.backend.mundoAnimal.services.CategoriaService;
 import com.backend.mundoAnimal.services.ProductoService;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
