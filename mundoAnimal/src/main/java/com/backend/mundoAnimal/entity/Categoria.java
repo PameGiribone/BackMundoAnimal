@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -21,8 +22,7 @@ public class Categoria {
     private String imagen;
 
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-    @JsonIgnore 
-    @JsonBackReference
+    @JsonIgnore
     private Set<Producto> productos;
 
     public Categoria() {

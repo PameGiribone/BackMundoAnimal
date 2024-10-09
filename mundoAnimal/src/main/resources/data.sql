@@ -24,4 +24,16 @@ VALUES
 ("1", "https://sucanuy.vtexassets.com/arquivos/ids/186773-800-auto?v=637934433347400000&width=800&height=auto&aspect=true", "Maxine Super Premium", "Alimento para perros adultos - 21kg", "$ 1.5"),
 ("1", "https://http2.mlstatic.com/D_NQ_NP_931561-MLA45768207715_042021-O.webp", "Maxine Super Premium", "Alimento para perros adultos sabor mix - 25kg", "$ 1.5"),
 ("1","https://nuevaerauruguay.com/wp-content/uploads/2021/07/7797453000666-product-image-1.png", "Pedigree Adultos", "Alimento para perros adultos sabor carne y vegetales - 21kg", "$1.5" ),
-("1", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxLQinCxWJKdPwyNjVbOR4GRaeKdnc5uMjA&s", "Pedigree Razas Pequeñas", "Alimentos para perros adultos de razas pequeñas - 21kg","$1.5" );
+("1", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxLQinCxWJKdPwyNjVbOR4GRaeKdnc5uMjA&s", "Pedigree Razas Pequeñas", "Alimentos para perros adultos de razas pequeñas - 21kg","$1.5" ),
+("3", "https://mundomascota.uy/wp-content/uploads/2024/09/D_737032-MLU43635783520_092020-F-1.jpg", "Ración para Hamster", "", "$ 1.5"),
+("3", "", "Ración para Maragata", "", "$1.5"),
+("3", "", "Trigo", "", "$1.5"),
+("3", "", "Girasol chico", "", "$1.5"),
+("3", "", "Girasol grande", "", "$1.5"),
+("3", "", "Trigo", "", "$1.5"),
+("3", "", "Maíz", "", "$1.5"),
+("3", "", "Alpiste", "", "$1.5"),
+("3", "", "Ración para Canarios", "", "$1.5"),
+("3", "", "Maíz pajarito", "", "$1.5"),
+("3", "", "Maíz entero", "", "$1.5"),
+("3", "", "Maíz quebrado", "", "$1.5");

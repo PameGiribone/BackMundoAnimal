@@ -18,16 +18,18 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-  @Bean
+    
+    @SuppressWarnings("deprecation")
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .csrf().disable()
-            .authorizeRequests()
-                .anyRequest().permitAll() 
-            .and()
-            .cors(); 
+        http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/**").permitAll()
+                        .anyRequest().authenticated());
         return http.build();
     }
+
+
 
     @Bean
     public HttpFirewall allowUrlEncodedSlashHttpFirewall() {

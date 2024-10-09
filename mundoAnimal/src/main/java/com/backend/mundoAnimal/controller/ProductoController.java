@@ -2,14 +2,15 @@ package com.backend.mundoAnimal.controller;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.backend.mundoAnimal.entity.Categoria;
 import com.backend.mundoAnimal.entity.Producto;
-import com.backend.mundoAnimal.services.CategoriaService;
 import com.backend.mundoAnimal.services.ProductoService;
+import com.backend.mundoAnimal.services.CategoriaService;
 
 @RestController
 @RequestMapping("/productos")
@@ -26,9 +27,9 @@ public class ProductoController {
         return productoService.listarProductos();
     }
 
-    @PostMapping("/guardar")
-    public Producto guardarProducto(@RequestBody Producto producto) {
-        return productoService.guardarProducto(producto);
+    @PostMapping(value = "/guardar", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Producto> guardarProducto(@RequestBody Producto producto) {
+        return ResponseEntity.ok(productoService.guardarProducto(producto));
     }
 
     @PutMapping("/{id}")
