@@ -2,7 +2,8 @@ package com.backend.mundoAnimal.entity;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -20,7 +21,8 @@ public class Categoria {
     private String imagen;
 
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-    @JsonManagedReference 
+    @JsonIgnore 
+    @JsonBackReference
     private Set<Producto> productos;
 
     public Categoria() {
