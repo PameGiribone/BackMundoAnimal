@@ -44,8 +44,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://expargentina.s3-website-us-east-1.amazonaws.com")); // Permitir origen específico
-        configuration.setAllowedOrigins(List.of("*")); // Permitir todos los origenes
+        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // Permitir origen específico        
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Permitir métodos HTTP
         configuration.setAllowedHeaders(List.of("*")); // Permitir todos los headers
         configuration.setAllowCredentials(true); // Permitir credenciales (si se requiere)
