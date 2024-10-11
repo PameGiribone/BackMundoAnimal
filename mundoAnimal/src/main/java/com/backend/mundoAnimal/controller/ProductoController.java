@@ -11,7 +11,9 @@ import com.backend.mundoAnimal.entity.Categoria;
 import com.backend.mundoAnimal.entity.Producto;
 import com.backend.mundoAnimal.services.ProductoService;
 import com.backend.mundoAnimal.services.CategoriaService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {
@@ -55,5 +57,10 @@ public class ProductoController {
     @GetMapping("/categoria/{categoriaId}")
     public List<Producto> obtenerProductosPorCategoria(@PathVariable Long categoriaId) {
         return productoService.obtenerProductosPorCategoria(categoriaId);
+    }
+
+    @PutMapping("/editarProducto")
+    public ResponseEntity<Producto> editarProducto(@RequestBody Producto producto) {
+        return ResponseEntity.ok(productoService.editarProducto(producto));
     }
 }

@@ -45,4 +45,9 @@ public class CategoriaController {
         categoriaService.eliminarCategoria(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Categoria> obtenerCategoriaPorId(@PathVariable Long id) {
+        Categoria categoria = categoriaService.obtenerCategoriaPorId(id);
+        return ResponseEntity.ok(categoria);
+    }
 }

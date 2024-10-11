@@ -32,4 +32,8 @@ public class ProductoService {
     public List<Producto> obtenerProductosPorCategoria(Long categoriaId) {
         return productoRepository.findByCategoriaId(categoriaId);
     }
+
+    public Producto editarProducto(Producto producto) {
+        return productoRepository.save(producto);
+    }
 }

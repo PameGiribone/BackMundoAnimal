@@ -28,4 +28,8 @@ public class CategoriaService {
     public Categoria obtenerCategoriaPorId(Long id) {
         return categoriaRepository.findById(id).orElse(null);
     }
+
+    public Categoria listarCategoriaPorId(Long id) {
+        return categoriaRepository.findById(id).orElse(null);
+    }
 }
