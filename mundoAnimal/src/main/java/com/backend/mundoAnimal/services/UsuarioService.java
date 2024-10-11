@@ -5,11 +5,13 @@ import com.backend.mundoAnimal.repository.UsuarioRepository;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioService {
+public class UsuarioService  {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -34,4 +36,11 @@ public class UsuarioService {
         
 
     }
+    public Usuario findByEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
+  
+
 }
+   

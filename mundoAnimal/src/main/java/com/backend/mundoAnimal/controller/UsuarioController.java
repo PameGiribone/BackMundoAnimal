@@ -33,5 +33,14 @@ public class UsuarioController {
         Usuario usuario = usuarioService.listarUsuarioPorId(id);
         return ResponseEntity.ok(usuario);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestBody Usuario usuario) {
+        Usuario usuarioEncontrado = usuarioService.findByEmail(usuario.getEmail());
+        if (usuarioEncontrado != null && usuarioEncontrado.getPassword().equals(usuario.getPassword())) {
+            return ResponseEntity.ok(usuarioEncontrado);
+        }
+        return ResponseEntity.notFound().build();
+    }
     
 }
