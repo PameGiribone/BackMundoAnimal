@@ -2,12 +2,12 @@ package com.backend.mundoAnimal.controller;
 
 import com.backend.mundoAnimal.entity.Usuario;
 import com.backend.mundoAnimal.services.UsuarioService;
-
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -16,10 +16,13 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @GetMapping("/listarUsuarios")
-    public List<Usuario> listarUsuario() {
+    public List<Usuario> listarUsuarios() {
         System.out.println("Listando usuarios");
-        return usuarioService.listarUsuario();
+        return usuarioService.listarUsuarios();
     }
 
     @PutMapping("/cambiarContraseña/{id}")
@@ -37,10 +40,11 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<Usuario> login(@RequestBody Usuario usuario) {
         Usuario usuarioEncontrado = usuarioService.findByEmail(usuario.getEmail());
-        if (usuarioEncontrado != null && usuarioEncontrado.getPassword().equals(usuario.getPassword())) {
+        if (usuarioEncontrado != null && passwordEncoder.matches(usuario.getPassword(), usuarioEncontrado.getPassword())) {
             return ResponseEntity.ok(usuarioEncontrado);
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.status(401).build();
     }
-    
+
+ 
 }
