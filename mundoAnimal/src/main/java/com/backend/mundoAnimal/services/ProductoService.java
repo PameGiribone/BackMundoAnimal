@@ -36,4 +36,9 @@ public class ProductoService {
     public Producto editarProducto(Producto producto) {
         return productoRepository.save(producto);
     }
+
+    public List<Producto> buscarProductos(String nombre) {
+        return productoRepository.findByNombreContainingIgnoreCase(nombre);
+    }
 }
+

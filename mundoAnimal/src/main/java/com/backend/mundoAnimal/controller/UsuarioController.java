@@ -1,13 +1,21 @@
 package com.backend.mundoAnimal.controller;
 
-import com.backend.mundoAnimal.entity.Usuario;
-import com.backend.mundoAnimal.services.UsuarioService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.backend.mundoAnimal.entity.Usuario;
+import com.backend.mundoAnimal.services.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -44,6 +52,12 @@ public class UsuarioController {
             return ResponseEntity.ok(usuarioEncontrado);
         }
         return ResponseEntity.status(401).build();
+    }
+
+    @DeleteMapping("/eliminarUsuario/{id}")
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id) {
+        usuarioService.eliminarUsuario(id);
+        return ResponseEntity.ok().build();
     }
 
  

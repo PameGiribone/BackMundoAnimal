@@ -11,7 +11,6 @@ import com.backend.mundoAnimal.entity.Categoria;
 import com.backend.mundoAnimal.entity.Producto;
 import com.backend.mundoAnimal.services.ProductoService;
 import com.backend.mundoAnimal.services.CategoriaService;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -62,5 +61,10 @@ public class ProductoController {
     @PutMapping("/editarProducto")
     public ResponseEntity<Producto> editarProducto(@RequestBody Producto producto) {
         return ResponseEntity.ok(productoService.editarProducto(producto));
+    }
+
+    @GetMapping("/buscar")
+    public List<Producto> buscarProductos(@RequestParam String nombre) {
+        return productoService.buscarProductos(nombre);
     }
 }

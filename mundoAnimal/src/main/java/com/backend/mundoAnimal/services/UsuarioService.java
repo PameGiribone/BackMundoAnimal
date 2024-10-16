@@ -1,12 +1,13 @@
 package com.backend.mundoAnimal.services;
 
-import com.backend.mundoAnimal.entity.Usuario;
-import com.backend.mundoAnimal.repository.UsuarioRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.backend.mundoAnimal.entity.Usuario;
+import com.backend.mundoAnimal.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -33,5 +34,9 @@ public class UsuarioService {
 
     public Usuario findByEmail(String email) {
         return usuarioRepository.findByEmail(email);
+    }
+
+    public void eliminarUsuario(Long id) {
+        usuarioRepository.deleteById(id);
     }
 }
