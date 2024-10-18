@@ -2,11 +2,10 @@ package com.backend.mundoAnimal.entity;
 
 import java.util.Set;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +18,13 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    
+    @Column(length = 500)
     private String imagen;
+    
     private String titulo;   
+    
+    @Column(length = 1000)
     private String descripcion;
 
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
