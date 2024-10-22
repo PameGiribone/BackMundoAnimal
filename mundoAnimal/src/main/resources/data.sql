@@ -57,7 +57,7 @@ VALUES
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/189684-1200-auto?v=638061033156600000&width=1200&height=auto&aspect=true","Pastilla Nexgard Spectra","Perros de 7.5 a 15kg","1.5"),
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/189676-1200-auto?v=638061026381630000&width=1200&height=auto&aspect=true","Pastilla Nexgard Spectra","Perros de 15 a 30kg","1.5"),
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/189682-1200-auto?v=638061029393270000&width=1200&height=auto&aspect=true","Pastilla Nexgard Spectra","Perros de 30 a 60kg","1.5"),
-("7", "https://sucanuy.vtexassets.com/arquivos/ids/186328-1200-auto?v=637934430556900000&width=1200&height=auto&aspect=true","Collar Dominal para gatos","","1.5"),
+("7", "https://sucanuy.vtexassets.com/arquivos/ids/186328-1200-auto?v=637934430556900000&width=1200&height=auto&aspect=true","Collar Dominal para gatos","Antiparasitario externo para felinos.","1.5"),
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/186336-1200-auto?v=637934430600870000&width=1200&height=auto&aspect=true","Collar Dominal","Perros pequeños o cachorros","1.5"),
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/186335-1200-auto?v=637934430597730000&width=1200&height=auto&aspect=true","Collar Dominal","Perros medianos","1.5"),
 ("7", "https://sucanuy.vtexassets.com/arquivos/ids/186334-1200-auto?v=637934430594470000&width=1200&height=auto&aspect=true","Collar Dominal","Perros grandes","1.5"),

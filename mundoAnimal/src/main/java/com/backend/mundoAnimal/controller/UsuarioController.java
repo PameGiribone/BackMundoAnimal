@@ -1,6 +1,7 @@
 package com.backend.mundoAnimal.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,12 +34,14 @@ public class UsuarioController {
         return usuarioService.listarUsuarios();
     }
 
-    @PutMapping("/cambiarContraseña/{id}")
-    public ResponseEntity<Usuario> cambiarContraseña(@PathVariable Long id, @RequestBody String nuevaContraseña) {
+    @PutMapping("/changePassword/{id}")
+    public ResponseEntity<Usuario> cambiarContraseña(@PathVariable Long id, @RequestBody Map<String, String> payload) {
+        String nuevaContraseña = payload.get("nuevaContraseña");
         Usuario usuario = usuarioService.cambiarContraseña(id, nuevaContraseña);
         return ResponseEntity.ok(usuario);
     }
 
+   
     @GetMapping("/listarUsuarioPorId/{id}")
     public ResponseEntity<Usuario> listarUsuarioPorId(@PathVariable Long id) {
         Usuario usuario = usuarioService.listarUsuarioPorId(id);
