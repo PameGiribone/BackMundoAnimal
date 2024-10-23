@@ -39,4 +39,21 @@ public class UsuarioService {
     public void eliminarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+    public boolean validarAdmin(String email, String password) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if (usuario == null) {
+            System.out.println("Usuario no encontrado");
+            return false;
+        }
+        if (!passwordEncoder.matches(password, usuario.getPassword())) {
+            System.out.println("Contraseña incorrecta");
+            return false;
+        }
+        if (!"ROLE_ADMIN".equals(usuario.getRole())) {
+            System.out.println("Rol incorrecto");
+            return false;
+        }
+        return true;
+    }
 }
