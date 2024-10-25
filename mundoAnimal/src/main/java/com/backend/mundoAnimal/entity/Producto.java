@@ -1,9 +1,8 @@
 package com.backend.mundoAnimal.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import java.math.BigDecimal;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +18,7 @@ public class Producto {
     private Long id;
     private String nombre;
     private String descripcion;
-    private String precio;
+    private BigDecimal precio;
     private String imagen;
 
     @ManyToOne
@@ -29,7 +28,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, String descripcion, String precio, String imagen, Categoria categoria) {
+    public Producto(Long id, String nombre, String descripcion, BigDecimal precio, String imagen, Categoria categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -62,11 +61,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

@@ -17,7 +17,7 @@
 
 INSERT IGNORE INTO producto (categoria_id, imagen, nombre, descripcion, precio)
 VALUES
-("2", "https://distribuidoralopez.com.uy/wp-content/uploads/2024/06/D_602099-MLA76683488454_062024-F.jpg","Lager Premium - Gato Adulto", "Alimento Lager Premium para gato adulto Sabor Mix - 7kg", "1.50"),
+-- ("2", "https://distribuidoralopez.com.uy/wp-content/uploads/2024/06/D_602099-MLA76683488454_062024-F.jpg","Lager Premium - Gato Adulto", "Alimento Lager Premium para gato adulto Sabor Mix - 7kg", "1.50"),
 -- ("2", "https://http2.mlstatic.com/D_NQ_NP_637188-MLU75047529898_032024-O.webp", "Sushi Cat - Gato Adulto", "Alimento Sushi Cat para gatos de todas las edades - 7kg", "10.5"),
 -- ("2", "https://devotouy.vtexassets.com/arquivos/ids/1532882-800-auto?v=638619544599500000&width=800&height=auto&aspect=true", "Alimento PrimoGato Premium", "Alimento PrimoGato para gatos castrados - 10kg", "1.5"),
 -- ("2", "https://buffettmascotas.com.uy/wp-content/uploads/2022/06/vittamax-correcto.jpg", "Vitta Max - Gato Adulto", "Alimento Vitta Max para gato adulto - 10kg", "1.5"),
