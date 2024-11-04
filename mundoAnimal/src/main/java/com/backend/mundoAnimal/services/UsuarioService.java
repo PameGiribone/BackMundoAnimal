@@ -22,12 +22,29 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario cambiarContraseña(Long id, String nuevaContraseña) {
-        Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-        usuario.setPassword(passwordEncoder.encode(nuevaContraseña));
-        return usuarioRepository.save(usuario);
-    }
+    // public Usuario cambiarContraseña(Long id, String nuevaContraseña) {
+    //     Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+    //     usuario.setPassword(passwordEncoder.encode(nuevaContraseña));
+    //     return usuarioRepository.save(usuario);
+    // }
 
+    public boolean cambiarContraseña(Long id, String contraseñaAnterior, String nuevaContraseña) { 
+        Usuario usuario = usuarioRepository.findById(id) 
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado")); 
+            // Comparar la contraseña anterior encriptada con la ingresada 
+            if (passwordEncoder.matches(contraseñaAnterior, usuario.getPassword())) { 
+                // Encriptar y guardar la nueva contraseña 
+                usuario.setPassword(passwordEncoder.encode(nuevaContraseña));
+                 usuarioRepository.save(usuario); return true; 
+                } else { 
+                    return false; 
+                }
+             }
+   
+   
+   
+   
+   
     public Usuario listarUsuarioPorId(Long id) {
         return usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
