@@ -34,15 +34,25 @@ public class UsuarioController {
         return usuarioService.listarUsuarios();
     }
 
-    @PutMapping("/changePassword/{id}")
-    public ResponseEntity<Usuario> cambiarContraseña(@PathVariable Long id, @RequestBody Map<String, String> payload) {
-        String nuevaContraseña = payload.get("nuevaContraseña");
-        Usuario usuario = usuarioService.cambiarContraseña(id, nuevaContraseña);
-        return ResponseEntity.ok(usuario);
-    }
+    // @PutMapping("/changePassword/{id}")
+    // public ResponseEntity<Usuario> cambiarContraseña(@PathVariable Long id, @RequestBody Map<String, String> payload) {
+    //     String nuevaContraseña = payload.get("nuevaContraseña");
+    //     Usuario usuario = usuarioService.cambiarContraseña(id, nuevaContraseña);
+    //     return ResponseEntity.ok(usuario);
+    // }
 
-   
-    @GetMapping("/listarUsuarioPorId/{id}")
+    @PutMapping("/changePassword/{id}")
+     public ResponseEntity<?> cambiarContraseña(@PathVariable Long id, @RequestBody Map<String, String> payload) { 
+        String contraseñaAnterior = payload.get("contraseñaAnterior"); 
+        String nuevaContraseña = payload.get("nuevaContraseña"); 
+        boolean isChanged = usuarioService.cambiarContraseña(id, contraseñaAnterior, nuevaContraseña); 
+        if (isChanged) { return ResponseEntity.ok("Contraseña actualizada correctamente"); 
+    } else { 
+    return ResponseEntity.badRequest().body("La contraseña anterior no coincide");
+    }
+}
+
+@GetMapping("/listarUsuarioPorId/{id}")
     public ResponseEntity<Usuario> listarUsuarioPorId(@PathVariable Long id) {
         Usuario usuario = usuarioService.listarUsuarioPorId(id);
         return ResponseEntity.ok(usuario);
