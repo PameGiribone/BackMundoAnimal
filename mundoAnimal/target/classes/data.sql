@@ -1,3 +1,21 @@
+-- CREATE TABLE IF NOT EXISTS categoria (
+--     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+--     imagen VARCHAR(255),
+--     nombre VARCHAR(255) NOT NULL,
+--     titulo VARCHAR(255),
+--     descripcion TEXT
+-- );
+
+-- CREATE TABLE IF NOT EXISTS producto (
+--     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+--     categoria_id BIGINT,
+--     imagen VARCHAR(255),
+--     nombre VARCHAR(255) NOT NULL,
+--     descripcion TEXT,
+--     precio DECIMAL(10, 2),
+--     FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+-- );
+
 -- INSERT IGNORE INTO categoria (imagen , nombre, titulo, descripcion ) VALUES
 -- ("https://image.lexica.art/full_webp/1abd3b65-eff8-4d54-8126-17cf2836e43b", "PERRO", "ALIMENTOS PARA PERROS", "Una alimentación balanceada es fundamental para mantener la salud y bienestar de los perros. Les proporciona los nutrientes esenciales que necesitan para tener energía, fortalecer su sistema inmunológico y mantener un pelaje sano. Además, previene enfermedades asociadas con deficiencias o excesos nutricionales, como problemas digestivos, obesidad y afecciones cardíacas. Al ofrecer una dieta equilibrada, se asegura un crecimiento adecuado en cachorros y un envejecimiento saludable en perros adultos."),
 -- ("https://image.lexica.art/full_webp/172f1484-6fb9-49cf-9a71-6c13bb760402", "GATO", "ALIMENTOS PARA GATOS", "La alimentación balanceada en los gatos es crucial para su salud y longevidad, ya que son animales carnívoros estrictos y necesitan nutrientes específicos como la taurina, que solo obtienen de fuentes animales. Una dieta equilibrada les proporciona las proteínas, vitaminas y minerales necesarios para mantener sus músculos fuertes, su pelaje brillante y su sistema inmunológico en óptimas condiciones. Además, una buena alimentación previene problemas comunes como enfermedades urinarias, obesidad y diabetes. Proporcionarles una dieta adecuada asegura su bienestar y una vida más saludable."),
@@ -15,8 +33,8 @@
 
 
 
-INSERT IGNORE INTO producto (categoria_id, imagen, nombre, descripcion, precio)
-VALUES
+-- INSERT IGNORE INTO producto (categoria_id, imagen, nombre, descripcion, precio)
+-- VALUES
 -- ("2", "https://distribuidoralopez.com.uy/wp-content/uploads/2024/06/D_602099-MLA76683488454_062024-F.jpg","Lager Premium - Gato Adulto", "Alimento Lager Premium para gato adulto Sabor Mix - 7kg", "1.50"),
 -- ("2", "https://http2.mlstatic.com/D_NQ_NP_637188-MLU75047529898_032024-O.webp", "Sushi Cat - Gato Adulto", "Alimento Sushi Cat para gatos de todas las edades - 7kg", "10.5"),
 -- ("2", "https://devotouy.vtexassets.com/arquivos/ids/1532882-800-auto?v=638619544599500000&width=800&height=auto&aspect=true", "Alimento PrimoGato Premium", "Alimento PrimoGato para gatos castrados - 10kg", "1.5"),
