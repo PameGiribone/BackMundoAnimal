@@ -25,7 +25,7 @@ import com.backend.mundoAnimal.exceptions.UnauthorizedException;
 import com.backend.mundoAnimal.services.CategoriaService;
 import com.backend.mundoAnimal.services.ProductoService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://petshopvalu.store")
 @RestController
 @RequestMapping("/productos")
 public class ProductoController {

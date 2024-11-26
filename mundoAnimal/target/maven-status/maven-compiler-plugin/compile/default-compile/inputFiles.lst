@@ -10,10 +10,12 @@ C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\repository\CategoriaRepository.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\repository\ProductoRepository.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\repository\UsuarioRepository.java
+C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\security\CustomWebSecurityConfigurerAdapter.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\security\SecurityConfig.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\security\WebConfig.java
-C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\security\WebSecurityConfigurerAdapter.java
+C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\security\WebSecurityConfig.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\services\CategoriaService.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\services\CustomUserDetailsService.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\services\ProductoService.java
 C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\com\backend\mundoAnimal\services\UsuarioService.java
+C:\Users\pameg\OneDrive\Escritorio\BackMundoAnimal\mundoAnimal\src\main\java\org\springframework\security\config\annotation\web\configuration\WebSecurityConfigurerAdapter.java
