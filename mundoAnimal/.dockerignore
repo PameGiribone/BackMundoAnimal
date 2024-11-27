@@ -1,0 +1,15 @@
+# Ignorar el directorio target (donde Maven guarda los archivos compilados)
+**/target/*
+
+# Ignorar archivos de log y clases compiladas
+*.log
+*.class
+
+# Ignorar archivos y directorios de control de versiones
+.git
+.gitignore
+
+# Asegurarse de que los archivos de Maven Wrapper no sean ignorados
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/*
