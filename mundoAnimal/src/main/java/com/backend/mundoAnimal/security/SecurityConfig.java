@@ -20,15 +20,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig implements WebMvcConfigurer {
-    
+
     @SuppressWarnings("deprecation")
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Habilitar CORS
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/**").permitAll()
-                        .anyRequest().authenticated());
+                        .requestMatchers("/**").permitAll()  // Permitir acceso a todos los endpoints
+                        .anyRequest().authenticated());   // Los demás endpoints requieren autenticación
         return http.build();
     }
 
@@ -44,22 +44,27 @@ public class SecurityConfig implements WebMvcConfigurer {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("https://petshopvalu.store")); // Permitir solo http://localhost:5173
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Permitir métodos HTTP
-        configuration.setAllowedHeaders(List.of("*")); // Permitir todos los headers
-        configuration.setAllowCredentials(true); // Permitir credenciales (si se requiere)
+        
+        // Permitir petshopvalu.store
+        configuration.setAllowedOrigins(List.of("https://petshopvalu.store",  "https://92.112.177.42:8443"));
+        
+        // Permitir los métodos necesarios
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        
+        // Permitir todos los headers
+        configuration.setAllowedHeaders(List.of("*"));
+        
+        // Permitir credenciales si es necesario
+        configuration.setAllowCredentials(true);
+
+        // Aplicar CORS a todos los endpoints
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+        
         return source;
     }
-
-    
-
-
-
-
 }

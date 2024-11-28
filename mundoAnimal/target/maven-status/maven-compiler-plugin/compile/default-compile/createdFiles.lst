@@ -9,10 +9,12 @@ com\backend\mundoAnimal\MundoAnimalApplication$Myconfiguration.class
 com\backend\mundoAnimal\controller\CategoriaController.class
 com\backend\mundoAnimal\exceptions\UnauthorizedException.class
 org\springframework\security\config\annotation\web\configuration\WebSecurityConfigurerAdapter.class
+com\backend\mundoAnimal\config\TomcatConfig.class
 com\backend\mundoAnimal\security\WebSecurityConfig.class
 com\backend\mundoAnimal\controller\UsuarioController.class
 com\backend\mundoAnimal\services\UsuarioService.class
 com\backend\mundoAnimal\MundoAnimalApplication.class
+com\backend\mundoAnimal\config\HttpsConfig.class
 com\backend\mundoAnimal\entity\Producto.class
 com\backend\mundoAnimal\repository\ProductoRepository.class
 com\backend\mundoAnimal\services\ProductoService.class
